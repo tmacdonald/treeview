@@ -5,7 +5,7 @@ import fileSystem from "./tree.json";
 import createNav from "./nav";
 import { renderTable } from "./table/table";
 
-const folderTree = createNav(fileSystem);
+const folderTree = createNav(fileSystem, getURLHash());
 
 const nav = document.querySelector("#nav");
 const table = document.querySelector("#content .table");
