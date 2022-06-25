@@ -54,7 +54,7 @@ function renderTableRow(node, hash) {
     node.type === "folder"
       ? `<a href="#/${hash}/${node.name}">${node.name}</a>`
       : node.name;
-  const modified = new Date(node.modified);
+  const modified = new Date(node.modified).toLocaleDateString();
   const size = formatBytes(node.size);
 
   tr.innerHTML = `

@@ -2,7 +2,7 @@
   {
     "type": "folder",
     "name": "Files",
-
+    "modified": 1556122995117,
     "size": 0,
     "children": [
       {
@@ -29,32 +29,32 @@
       {
         "type": "folder",
         "name": "Images",
+        "modified": 1556122995117,
         "size": 0,
         "children": []
       },
       {
         "type": "folder",
         "name": "System",
-
+        "modified": 1556122995117,
         "size": 0,
         "children": [
           {
             "type": "folder",
             "name": "Files",
-
+            "modified": 1556122995117,
             "size": 0,
             "children": [
               {
                 "type": "folder",
                 "name": "Documents",
-
+                "modified": 1556122995117,
                 "size": 0,
                 "children": [
                   {
                     "type": "file",
                     "name": "Description.rtf",
                     "modified": 1656122995117,
-
                     "size": 1024
                   },
                   {
@@ -68,13 +68,14 @@
               {
                 "type": "folder",
                 "name": "Images",
+                "modified": 1556122995117,
                 "size": 0,
                 "children": []
               },
               {
                 "type": "folder",
                 "name": "System",
-
+                "modified": 1556122995117,
                 "size": 0,
                 "children": []
               },
@@ -82,7 +83,6 @@
                 "type": "file",
                 "name": "Description.rtf",
                 "modified": 1656122995117,
-
                 "size": 1024
               },
               {
