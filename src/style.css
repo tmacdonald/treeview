@@ -1,3 +1,28 @@
-.hello {
-  color: red;
+ul.nav,
+.nav ul {
+  list-style: none;
+}
+
+.folder > .children {
+  display: none;
+}
+
+.folder.expanded > .children {
+  display: block;
+}
+
+.folder > .folder_closed {
+  display: inline;
+}
+
+.folder > .folder_open {
+  display: none;
+}
+
+.folder.expanded > .folder_open {
+  display: inline;
+}
+
+.folder.expanded > .folder_closed {
+  display: none;
 }

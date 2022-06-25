@@ -2,10 +2,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
+  mode: "development",
   entry: "./src/index.js",
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
+  devServer: {
+    static: "./dist",
   },
   module: {
     rules: [
@@ -18,6 +18,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Cribl Exercise",
+      template: "index.html",
     }),
   ],
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+  },
 };
