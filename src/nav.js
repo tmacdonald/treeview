@@ -2,6 +2,24 @@ function isExpanded(folder) {
   return folder.classList.contains("expanded");
 }
 
+function delegateEvent(el, type, target, callback) {
+  el.addEventListener(type, (e) => {
+    if (e.target.matches(target)) {
+      callback(e);
+    }
+  });
+}
+
+function onFolderExpandCollapse(e) {
+  const folder = e.target.closest(".folder");
+
+  if (isExpanded(folder)) {
+    folder.classList.remove("expanded");
+  } else {
+    folder.classList.add("expanded");
+  }
+}
+
 export default function createNav(folderStructure) {
   const nav = document.createElement("ul");
   nav.classList.add("nav");
@@ -9,17 +27,7 @@ export default function createNav(folderStructure) {
   const childrenElements = renderTreeNodes(folderStructure);
   childrenElements.forEach((childElement) => nav.appendChild(childElement));
 
-  nav.addEventListener("click", (e) => {
-    if (e.target.matches("span")) {
-      const folder = e.target.closest(".folder");
-
-      if (isExpanded(folder)) {
-        folder.classList.remove("expanded");
-      } else {
-        folder.classList.add("expanded");
-      }
-    }
-  });
+  delegateEvent(nav, "click", "span", onFolderExpandCollapse);
 
   return nav;
 }
