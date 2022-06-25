@@ -1,41 +1,22 @@
+import "reset-css";
 import "./style.css";
-import folderStructure from "./tree.json";
+import fileSystem from "./tree.json";
 
 import createNav from "./nav";
-import { createTable, renderTable } from "./table";
+import { renderTable } from "./table/table";
 
-export const getURLHash = () => document.location.hash.replace(/^#\//, "");
+const folderTree = createNav(fileSystem);
 
-function generateFolderDictionary(folderStructure, rootPath = []) {
-  return folderStructure
-    .filter((node) => node.type === "folder")
-    .reduce((acc, curr) => {
-      const path = [...rootPath, curr.name];
-      const pathKey = path.join("/");
+const nav = document.querySelector("#nav");
+const table = document.querySelector("#content .table");
 
-      if (curr.children) {
-        return {
-          ...acc,
-          [pathKey]: curr,
-          ...generateFolderDictionary(curr.children, path),
-        };
-      } else {
-        return {
-          ...acc,
-          [pathKey]: curr,
-        };
-      }
-    }, {});
+nav.appendChild(folderTree);
+
+function getURLHash() {
+  return document.location.hash.replace(/^#\//, "");
 }
 
-const folderDictionary = generateFolderDictionary(folderStructure);
-
-const nav = createNav(folderStructure);
-const table = createTable();
-
 window.addEventListener("hashchange", (event) => {
-  renderTable(table, folderDictionary[getURLHash()].children);
+  renderTable(table, fileSystem, getURLHash());
 });
-
-document.body.appendChild(nav);
-document.body.appendChild(table);
+renderTable(table, fileSystem, getURLHash());

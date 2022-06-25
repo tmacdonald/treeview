@@ -28,6 +28,7 @@
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
-    "bootstrap-icons": "^1.8.3"
+    "bootstrap-icons": "^1.8.3",
+    "reset-css": "^5.0.1"
   }
 }
