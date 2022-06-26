@@ -18,27 +18,9 @@ a:hover {
   margin-left: 1rem;
 }
 
-.folder > .children {
-  display: none;
-}
-
-.folder.expanded > .children {
-  display: block;
-}
-
-.folder > .folder_closed {
-  display: inline;
-}
-
-.folder > .folder_open {
-  display: none;
-}
-
-.folder.expanded > .folder_open {
-  display: inline;
-}
-
-.folder.expanded > .folder_closed {
+.treeview-navigation
+  a[role="treeitem"][aria-expanded="false"]
+  + [role="group"] {
   display: none;
 }
 

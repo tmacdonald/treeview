@@ -6,10 +6,12 @@ function isExpanded(folder) {
 
 function expandFolder(folder) {
   folder.classList.add("expanded");
+  folder.setAttribute("aria-expanded", true);
 }
 
 function collapseFolder(folder) {
   folder.classList.remove("expanded");
+  folder.setAttribute("aria-expanded", false);
 }
 
 function toggleFolder(folder) {
@@ -21,9 +23,7 @@ function toggleFolder(folder) {
 }
 
 function onToggleFolder(e) {
-  console.log("onToggleFolder");
-
-  const folder = e.target.closest(".folder");
+  const folder = e.target.closest("a[role=treeitem]");
 
   toggleFolder(folder);
   e.preventDefault();
@@ -105,9 +105,11 @@ function renderFolder(folder, hash, rootPath) {
                  <polygon points="2 1, 12 1, 7 9"></polygon>
                 </svg>
               </span>
-              <span class="material-symbols-outlined">folder_open</span>${folder.name}
+              ${folder.name}
             </span>`;
   li.appendChild(a);
+
+  //<span class="material-symbols-outlined">folder_open</span>
 
   if (hasChildren) {
     const ul = document.createElement("ul");
