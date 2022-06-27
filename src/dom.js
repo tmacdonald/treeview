@@ -15,6 +15,15 @@ export function delegateEvent(el, type, targets, callback) {
   });
 }
 
+/**
+ * Moderate shorthand for creating dom elements
+ *
+ * @param {*} tagName The type of element being created
+ * @param {*} attributes a map of attributes
+ * @param {*} classes A list of string classes
+ * @param {*} children A list of elements/strings
+ * @returns
+ */
 export function createElement(
   tagName,
   attributes = {},

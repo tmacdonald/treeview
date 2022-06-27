@@ -1,4 +1,4 @@
-import { formatBytes } from "./helpers";
+import formatBytes from "./formatBytes";
 
 test("file less than 1024 bytes displays in bytes", () => {
   expect(formatBytes(1)).toEqual("1 bytes");

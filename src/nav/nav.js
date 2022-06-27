@@ -84,6 +84,20 @@ function renderFolder(folder, hash, rootPath) {
     renderTreeNodes(folder.children, hash, path)
   );
 
+  const folderIcon = createElement(
+    "span",
+    undefined,
+    ["inline-icon", "material-symbols-outlined"],
+    ["folder_open"]
+  );
+
+  const folderName = createElement(
+    "span",
+    undefined,
+    ["folder-name"],
+    [folder.name]
+  );
+
   const icon = createElement("span", undefined, ["icon"]);
   icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
   <polygon points="2 1, 12 1, 7 9"></polygon>
@@ -93,11 +107,10 @@ function renderFolder(folder, hash, rootPath) {
   const a = createElement(
     "a",
     () => {
-      let attributes = { href: "#/" + pathKey };
+      let attributes = { href: "#/" + pathKey, role: "treeitem" };
       if (hasChildren) {
         attributes = {
           ...attributes,
-          role: "treeitem",
           "aria-expanded": expanded,
           "aria-owns": "id-" + pathId,
         };
@@ -105,7 +118,14 @@ function renderFolder(folder, hash, rootPath) {
       return attributes;
     },
     undefined,
-    [createElement("span", undefined, ["label"], [icon, folder.name])]
+    [
+      createElement("span", undefined, ["label"], () => {
+        if (hasChildren) {
+          return [icon, folderIcon, folderName];
+        }
+        return [folderIcon, folderName];
+      }),
+    ]
   );
 
   a.addEventListener("keydown", onKeyDown);
@@ -121,8 +141,6 @@ function renderFolder(folder, hash, rootPath) {
     },
     [a, ul]
   );
-
-  //<span class="material-symbols-outlined">folder_open</span>
 
   return li;
 }
