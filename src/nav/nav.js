@@ -42,15 +42,6 @@ function onKeyDown(e) {
   }
 }
 
-function onKeyupFolder(e) {
-  const folder = e.target.closest(".folder");
-  if (e.key === "ArrowRight") {
-    expandFolder(folder);
-  } else if (e.key === "ArrowLeft") {
-    collapseFolder(folder);
-  }
-}
-
 export default function createNav(folderStructure, hash) {
   const navigationList = createElement(
     "ul",
@@ -58,13 +49,6 @@ export default function createNav(folderStructure, hash) {
     ["treeview-navigation"],
     renderTreeNodes(folderStructure, hash)
   );
-  // delegateEvent(
-  //   navigationList,
-  //   "click",
-  //   ["span.icon", "span.icon > svg", "span.icon > svg > polygon"],
-  //   onToggleFolder
-  // );
-  // delegateEvent(navigationList, "keyup", ["a[role=treeitem]"], onKeyupFolder);
 
   return createElement(
     "nav",
