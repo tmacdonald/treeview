@@ -1,11 +1,13 @@
+# Cribl Take Home Exercise
+
 This is my submission for Cribl's front-end take home coding test.
 
-[x] ]The component should be divided into two panes and display a folder tree in the left
-pane and a file/folder list in the right pane (see mockup below).
-[x] It should be possible to expand/collapse folders in the folder tree.
-[x] It should be possible to select a folder in the left or right pane and display the contents of
-the folder in the right pane.
-[x] Provide getters/setters for nodes in this format
+- [x] ]The component should be divided into two panes and display a folder tree in the left
+      pane and a file/folder list in the right pane (see mockup below).
+- [x] It should be possible to expand/collapse folders in the folder tree.
+- [x] It should be possible to select a folder in the left or right pane and display the contents of
+      the folder in the right pane.
+- [x] Provide getters/setters for nodes in this format
 
 Writing the application without a library like React was an interesting challenge. I ended up writing a `createElement` function that was meant to clean up the rendering a bit.
 
