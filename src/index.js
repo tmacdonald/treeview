@@ -1,22 +1,25 @@
 import "reset-css";
 import "./style.css";
-import fileSystem from "./tree.json";
 
+import { getURLHash } from "./dom";
 import createNav from "./nav/nav";
 import { renderTable } from "./table/table";
 
-const folderTree = createNav(fileSystem, getURLHash());
+import backupFileSystem from "./tree.json";
 
-const nav = document.querySelector("#nav");
-const table = document.querySelector("#content .table");
+fetch("http://localhost:4629/tree.json")
+  .then((response) => response.json())
+  .catch(() => backupFileSystem)
+  .then((fileSystem) => {
+    const folderTree = createNav(fileSystem, getURLHash());
 
-nav.appendChild(folderTree);
+    const nav = document.querySelector("#nav");
+    const table = document.querySelector("#content .table");
 
-function getURLHash() {
-  return document.location.hash.replace(/^#\//, "");
-}
+    nav.appendChild(folderTree);
 
-window.addEventListener("hashchange", () => {
-  renderTable(table, fileSystem, getURLHash());
-});
-renderTable(table, fileSystem, getURLHash());
+    window.addEventListener("hashchange", () => {
+      renderTable(table, fileSystem, getURLHash());
+    });
+    renderTable(table, fileSystem, getURLHash());
+  });

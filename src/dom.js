@@ -45,6 +45,13 @@ export function createElement(
   return element;
 }
 
+/**
+ * @returns The hash with the #/ prefix stripped out
+ */
+export function getURLHash() {
+  return document.location.hash.replace(/^#\//, "");
+}
+
 export function emptyElement(el) {
   while (el.hasChildNodes()) {
     el.removeChild(el.lastChild);
