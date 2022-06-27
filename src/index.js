@@ -2,7 +2,7 @@ import "reset-css";
 import "./style.css";
 import fileSystem from "./tree.json";
 
-import createNav from "./nav";
+import createNav from "./nav/nav";
 import { renderTable } from "./table/table";
 
 const folderTree = createNav(fileSystem, getURLHash());
@@ -16,7 +16,7 @@ function getURLHash() {
   return document.location.hash.replace(/^#\//, "");
 }
 
-window.addEventListener("hashchange", (event) => {
+window.addEventListener("hashchange", () => {
   renderTable(table, fileSystem, getURLHash());
 });
 renderTable(table, fileSystem, getURLHash());

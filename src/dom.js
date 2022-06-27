@@ -15,6 +15,27 @@ export function delegateEvent(el, type, targets, callback) {
   });
 }
 
+export function createElement(
+  tagName,
+  attributes = {},
+  classes = [],
+  children = []
+) {
+  const calculatedAttributes =
+    typeof attributes === "function" ? attributes() : attributes;
+  const calculatedClasses = typeof classes === "function" ? classes() : classes;
+  const calculatedChildren =
+    typeof children === "function" ? children() : children;
+
+  const element = document.createElement(tagName);
+  Object.entries(calculatedAttributes).forEach(([key, value]) =>
+    element.setAttribute(key, value)
+  );
+  calculatedClasses.forEach((c) => element.classList.add(c));
+  calculatedChildren.forEach((c) => element.append(c));
+  return element;
+}
+
 export function emptyElement(el) {
   while (el.hasChildNodes()) {
     el.removeChild(el.lastChild);
