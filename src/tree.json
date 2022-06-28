@@ -1,112 +1,158 @@
 [
   {
     "type": "folder",
-    "name": "Files",
-    "modified": 1556122995117,
+    "name": "A",
+    "modified": 1556122995217,
     "size": 0,
     "children": [
       {
         "type": "folder",
-        "name": "Documents",
-        "modified": 1656122995117,
+        "name": "AA",
+        "modified": 1556122995217,
         "size": 0,
         "children": [
           {
-            "type": "file",
-            "name": "Description.rtf",
-            "modified": 1656122995117,
-
-            "size": 1024
+            "type": "folder",
+            "name": "AAA",
+            "modified": 1556122995217,
+            "size": 0,
+            "children": []
+          },
+          {
+            "type": "folder",
+            "name": "AAB",
+            "modified": 1556122995317,
+            "size": 0,
+            "children": []
+          },
+          {
+            "type": "folder",
+            "name": "AAC",
+            "modified": 1556122991217,
+            "size": 0,
+            "children": []
           },
           {
             "type": "file",
-            "name": "Description.txt",
-            "modified": 1656122995117,
-            "size": 1048574
+            "name": "aaa.png",
+            "modified": 1556122995317,
+            "size": 0
+          },
+          {
+            "type": "file",
+            "name": "aab.txt",
+            "modified": 1556122991217,
+            "size": 0
           }
         ]
       },
       {
         "type": "folder",
-        "name": "Images",
-        "modified": 1556122995117,
+        "name": "AB",
+        "modified": 1556122995317,
         "size": 0,
         "children": []
       },
       {
         "type": "folder",
-        "name": "System",
-        "modified": 1556122995117,
+        "name": "AC",
+        "modified": 1556122991217,
         "size": 0,
-        "children": [
-          {
-            "type": "folder",
-            "name": "Files",
-            "modified": 1556122995117,
-            "size": 0,
-            "children": [
-              {
-                "type": "folder",
-                "name": "Documents",
-                "modified": 1556122995117,
-                "size": 0,
-                "children": [
-                  {
-                    "type": "file",
-                    "name": "Description.rtf",
-                    "modified": 1656122995117,
-                    "size": 1024
-                  },
-                  {
-                    "type": "file",
-                    "name": "Description.txt",
-                    "modified": 1656122995117,
-                    "size": 2048
-                  }
-                ]
-              },
-              {
-                "type": "folder",
-                "name": "Images",
-                "modified": 1556122995117,
-                "size": 0,
-                "children": []
-              },
-              {
-                "type": "folder",
-                "name": "System",
-                "modified": 1556122995117,
-                "size": 0,
-                "children": []
-              },
-              {
-                "type": "file",
-                "name": "Description.rtf",
-                "modified": 1656122995117,
-                "size": 1024
-              },
-              {
-                "type": "file",
-                "name": "Description.txt",
-                "modified": 1656122995117,
-                "size": 2048
-              }
-            ]
-          }
-        ]
+        "children": []
       },
       {
         "type": "file",
-        "name": "Description.rtf",
-        "modified": 1656122995117,
-
-        "size": 1024
+        "name": "aa.png",
+        "modified": 1556122995317,
+        "size": 0
       },
       {
         "type": "file",
-        "name": "Description.txt",
-        "modified": 1656122995117,
-        "size": 2048
+        "name": "ab.txt",
+        "modified": 1556122991217,
+        "size": 0
+      }
+    ]
+  },
+  {
+    "type": "folder",
+    "name": "B",
+    "modified": 1556122995317,
+    "size": 0,
+    "children": [
+      {
+        "type": "folder",
+        "name": "BA",
+        "modified": 1556122995217,
+        "size": 0,
+        "children": []
+      },
+      {
+        "type": "folder",
+        "name": "BB",
+        "modified": 1556122995317,
+        "size": 0,
+        "children": []
+      },
+      {
+        "type": "folder",
+        "name": "BC",
+        "modified": 1556122991217,
+        "size": 0,
+        "children": []
+      },
+      {
+        "type": "file",
+        "name": "ba.png",
+        "modified": 1556122995317,
+        "size": 0
+      },
+      {
+        "type": "file",
+        "name": "bb.txt",
+        "modified": 1556122991217,
+        "size": 0
+      }
+    ]
+  },
+  {
+    "type": "folder",
+    "name": "C",
+    "modified": 1556122991217,
+    "size": 0,
+    "children": [
+      {
+        "type": "folder",
+        "name": "CA",
+        "modified": 1556122995217,
+        "size": 0,
+        "children": []
+      },
+      {
+        "type": "folder",
+        "name": "CB",
+        "modified": 1556122995317,
+        "size": 0,
+        "children": []
+      },
+      {
+        "type": "folder",
+        "name": "CC",
+        "modified": 1556122991217,
+        "size": 0,
+        "children": []
+      },
+      {
+        "type": "file",
+        "name": "ca.png",
+        "modified": 1556122995317,
+        "size": 0
+      },
+      {
+        "type": "file",
+        "name": "cb.txt",
+        "modified": 1556122991217,
+        "size": 0
       }
     ]
   }

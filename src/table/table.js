@@ -10,8 +10,7 @@ function clearElement(element) {
 export function renderTable(table, fileSystem, hash) {
   clearElement(table);
 
-  const fileSystemDictionary = generateFileSystemDictionary(fileSystem);
-  const children = fileSystemDictionary[hash]?.children || [];
+  const children = generateFileSystemDictionary(fileSystem)[hash] || [];
 
   const thead = renderTableHeader();
   const tbody = renderTableBody(children, hash);
@@ -42,9 +41,13 @@ function renderTableHeading(name) {
 function renderTableBody(folderContents, hash) {
   const tbody = document.createElement("tbody");
 
-  folderContents
-    .map((node) => renderTableRow(node, hash))
-    .forEach((tableRow) => tbody.appendChild(tableRow));
+  if (folderContents.length > 0) {
+    folderContents
+      .map((node) => renderTableRow(node, hash))
+      .forEach((tableRow) => tbody.appendChild(tableRow));
+  } else {
+    tbody.innerHTML = `<td class="empty" colspan="4">This folder is empty</td>`;
+  }
 
   return tbody;
 }
@@ -63,7 +66,7 @@ function renderTableRowFile(node) {
   const size = formatBytes(node.size);
 
   tr.innerHTML = `
-    <td><span class="material-symbols-outlined">description</span></td>
+    <td><span class="folder-icon hidden"></span></td>
     <td>${name}</td>
     <td>${modified}</td>
     <td>${size}</td>
@@ -78,7 +81,7 @@ function renderTableRowFolder(node, hash) {
   const modified = new Date(node.modified).toLocaleDateString();
 
   tr.innerHTML = `
-    <td><span class="inline-icon material-symbols-outlined">folder_open</span></td>
+    <td><span class="folder-icon"></span></td>
     <td>${name}</td>
     <td>${modified}</td>
     <td></td>

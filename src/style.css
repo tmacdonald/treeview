@@ -6,11 +6,17 @@ a {
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
+  font-weight: bold;
 }
 
-.inline-icon {
-  vertical-align: bottom;
+.folder-icon {
+  display: inline-block;
+  background-image: url("./images/folder-svgrepo-com.svg");
+  width: 24px;
+  height: 24px;
+}
+.folder-icon.hidden {
+  background-image: none;
 }
 
 a.folder-name,
@@ -24,15 +30,37 @@ ul[role="tree"].treeview-navigation {
 
 .treeview-navigation a[role="treeitem"] {
   display: block;
-  padding-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+}
+
+.treeview-navigation a[role="treeitem"] .label {
+  display: flex;
+  align-items: center;
+}
+
+.treeview-navigation a[role="treeitem"] .label .icon {
+  padding: 0.2rem;
+  padding-right: 1rem;
+}
+
+.treeview-navigation a[role="treeitem"] .folder-name {
+  padding-left: 1rem;
+}
+
+.treeview-navigation a[role="treeitem"] > span svg {
+  fill: #ccc;
 }
 
 .treeview-navigation a[role="treeitem"][aria-expanded="false"] > span svg {
   transform: rotate(270deg) translate(2px, 2px);
+  fill: #ccc;
 }
 
 .treeview-navigation ul[role="group"] {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .treeview-navigation
@@ -62,17 +90,38 @@ ul[role="tree"].treeview-navigation {
   height: calc(100vh - 2rem);
   flex: 2;
   overflow-y: scroll;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .table {
   width: 100%;
 }
+.table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+.table td.empty {
+  text-align: center;
+}
+.table tbody tr td {
+  padding: 0.5rem;
+  min-height: 3rem;
+}
 .table tr th,
 .table tr td {
   padding: 0.5rem;
   text-align: left;
+  vertical-align: middle;
 }
 .table tr th {
   background: #eee;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.table tr th:first-child {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.table tr th:last-child {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }

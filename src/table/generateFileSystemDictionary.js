@@ -8,27 +8,27 @@
  * @param {*} rootPath
  * @returns
  */
-export default function generateFileSystemDictionary(
-  fileSystem,
-  rootPath = []
-) {
+export default function generateFileSystemDictionary(fileSystem) {
+  return {
+    "": fileSystem,
+    ...recursiveGenerator(fileSystem, []),
+  };
+}
+
+function recursiveGenerator(fileSystem, rootPath = []) {
   return fileSystem
-    .filter((node) => node.type === "folder")
+    .filter(
+      (node) =>
+        node.type === "folder" && node.children && node.children.length > 0
+    )
     .reduce((acc, curr) => {
       const path = [...rootPath, curr.name];
       const pathKey = path.join("/");
 
-      if (curr.children) {
-        return {
-          ...acc,
-          [pathKey]: curr,
-          ...generateFileSystemDictionary(curr.children, path),
-        };
-      } else {
-        return {
-          ...acc,
-          [pathKey]: curr,
-        };
-      }
+      return {
+        ...acc,
+        [pathKey]: curr.children,
+        ...recursiveGenerator(curr.children, path),
+      };
     }, {});
 }

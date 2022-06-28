@@ -1,4 +1,5 @@
 import { createElement } from "../dom";
+import FolderIcon from "../images/folder-svgrepo-com.svg";
 
 function isExpanded(folder) {
   return folder.getAttribute("aria-expanded") === "true";
@@ -85,10 +86,9 @@ function renderFolder(folder, hash, rootPath) {
   );
 
   const folderIcon = createElement(
-    "span",
-    undefined,
-    ["inline-icon", "material-symbols-outlined"],
-    ["folder_open"]
+    "img",
+    { src: FolderIcon, alt: "Folder Icon" },
+    ["folder-icon"]
   );
 
   const folderName = createElement(
