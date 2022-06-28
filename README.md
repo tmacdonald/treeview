@@ -9,7 +9,9 @@ This is my submission for Cribl's front-end take home coding test.
       the folder in the right pane.
 - [x] Provide getters/setters for nodes in this format
 
-Writing the application without a library like React was an interesting challenge. The only external dependencies I brought in were `jest` for testing and `express` and `cors` for running the server. `reset-css` and `bootstrap-icons` are used for styling and icons.
+The only external dependencies I brought in were `jest` for testing and `express` and `cors` for running the server. `reset-css`is used for baseline styling.
+
+Writing the application without a library like React was an interesting challenge. Creating dom elements manually is very tedious, and I honestly forgot I was using SASS until I didn't have nested classes.
 
 There are tests for file size formatting as well as for a function that generates a path lookup for folders to make it easier for the table to present the correct folder and for the tree to expand automatically based on the location hash.
 
