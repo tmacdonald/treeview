@@ -1,6 +1,4 @@
-# Cribl Take Home Exercise
-
-This is my submission for Cribl's front-end take home coding test.
+# Treeview
 
 - [x] The component should be divided into two panes and display a folder tree in the left
       pane and a file/folder list in the right pane (see mockup below).
